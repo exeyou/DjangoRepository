@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Title</title>
+</head>
+<body>
+    <h1>Пости</h1>
+    {% for post in posts %}
+        <a href="{% url 'main:post_detail' post.pk %}">
+        <p><b>{{ post.title }}</b>
+        {{ post.created_at }}</p>
+        </a>
+    {% empty %}
+        <p>Постiв нема</p>
+    {% endfor %}
+</body>
+</html>
